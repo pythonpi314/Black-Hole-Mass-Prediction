@@ -25,8 +25,9 @@ B. 딥러닝 접근 (LSTM)
 4. 연구 결과
 학습 곡선: Train 및 Validation Loss가 안정적으로 수렴하여 과적합 없는 학습을 확인했습니다.
 예측 정확도: LSM은 실제 질량보다 3~4배 이상 튀는 오차를 보인 반면, LSTM은 y=x 정답선에 정확히 안착하는 성능을 보였습니다.
-<img width="960" height="473" alt="학습의 안정성 그래프" src="https://github.com/user-attachments/assets/6236c8a0-1997-4608-8f15-829f8ae61656" />
-<img width="960" height="293" alt="최종 결과 그래프" src="https://github.com/user-attachments/assets/a44f3530-f628-4bd0-86be-5a594578afe6" />
+<img width="928" height="472" alt="학습의 안정성 그래프" src="https://github.com/user-attachments/assets/d498d31b-2dfa-4631-8184-5c28c1d7923c" />
+<img width="1770" height="467" alt="최종 결과 그래프" src="https://github.com/user-attachments/assets/fd59ebca-3982-4c93-91e5-f2454beb0272" />
+
 
 5. 향후 발전 방향
 PINN(Physics-Informed Neural Networks) 도입: 데이터가 극도로 부족한 상황에서도 물리 법칙(에너지 보존 등)을 스스로 준수하며 답을 내놓는 하이브리드 모델로의 확장을 제안합니다.
