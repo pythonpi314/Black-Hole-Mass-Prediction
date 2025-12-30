@@ -6,6 +6,7 @@
 1. 연구 배경 및 목적
 문제 상황: 실제 천체 관측에서는 공전 주기의 극히 일부분만 관측 가능한 Short Arc 문제와 대기/기기 결함으로 인한 노이즈가 상존합니다.
 연구 목적: 극한의 데이터 환경에서 전통적 방식인 LSM(Least Squares Method)의 한계를 확인하고, 시계열 데이터 처리에 특화된 LSTM의 성능을 비교 검증합니다.
+<img width="290" height="228" alt="문제 상황 그래프" src="https://github.com/user-attachments/assets/b109a7a5-0d0d-4e8f-8464-fd384311fdb4" />
 
 2. 데이터셋 설계
 뉴턴의 만유인력 법칙을 기반으로 시뮬레이션 데이터를 생성했습니다.
@@ -24,6 +25,8 @@ B. 딥러닝 접근 (LSTM)
 4. 연구 결과
 학습 곡선: Train 및 Validation Loss가 안정적으로 수렴하여 과적합 없는 학습을 확인했습니다.
 예측 정확도: LSM은 실제 질량보다 3~4배 이상 튀는 오차를 보인 반면, LSTM은 y=x 정답선에 정확히 안착하는 성능을 보였습니다.
+<img width="960" height="473" alt="학습의 안정성 그래프" src="https://github.com/user-attachments/assets/6236c8a0-1997-4608-8f15-829f8ae61656" />
+<img width="960" height="293" alt="최종 결과 그래프" src="https://github.com/user-attachments/assets/a44f3530-f628-4bd0-86be-5a594578afe6" />
 
 5. 향후 발전 방향
 PINN(Physics-Informed Neural Networks) 도입: 데이터가 극도로 부족한 상황에서도 물리 법칙(에너지 보존 등)을 스스로 준수하며 답을 내놓는 하이브리드 모델로의 확장을 제안합니다.
