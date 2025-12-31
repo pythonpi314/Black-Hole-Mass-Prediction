@@ -46,7 +46,7 @@ Training Settings:
   Early Stopping: Validation Loss가 10 epoch 동안 개선되지 않을 경우 학습을 조기 종료하여 최적의 일반화 성능을 포착했습니다.
 
 6. Technical Discussion: Why AI?
-7. 
+
 과소결정계(Underdetermined System)의 돌파: Short Arc 상황은 타원의 파라미터를 확정하기 위한 구속 조건이 부족한 전형적인 과소결정계 문제입니다.
 LSM은 이를 기하학적 가정(원 궤도 근사)으로 풀려 했으나 실패한 반면, LSTM은 비선형 회귀를 통해 물리적 패턴을 추출했습니다. 미분 없는 추론: 전통적 방식은 미분($dv/dt$) 과정에서 노이즈가 증폭되는 치명적 약점이 있으나, LSTM은 궤적의 기하학적 곡률 패턴을 통째로 학습함으로써 노이즈에 영향을 받지 않는 강건함을 보여주었습니다.
 
