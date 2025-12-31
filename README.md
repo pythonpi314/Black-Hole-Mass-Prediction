@@ -24,7 +24,7 @@ B. 딥러닝 접근 (LSTM)
 강점: 노이즈에 휘둘리지 않고 궤도의 전체적인 흐름을 파악하여 강건한 추론이 가능합니다.
 
 4. Model Configuration & Hyperparameters
-5. 
+
 본 모델의 학습 안정성과 성능 극대화를 위해 설정한 하이퍼파라미터 및 전처리 상세 내역입니다.
 
 Data Scaling (StandardScaler): 좌표 데이터와 질량 데이터 간의 수치적 단위 차이를 극복하고 경사 하강법의 수렴 속도를 높이기 위해 표준 정규화(Standardization)를 적용했습니다.
