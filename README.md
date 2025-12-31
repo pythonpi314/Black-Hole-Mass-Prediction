@@ -23,12 +23,31 @@ B. 딥러닝 접근 (LSTM)
 미분을 하지 않고 점들이 찍히는 궤적의 곡률 패턴을 기하학적으로 학습합니다.
 강점: 노이즈에 휘둘리지 않고 궤도의 전체적인 흐름을 파악하여 강건한 추론이 가능합니다.
 
-4. 연구 결과
+4. Model Configuration & Hyperparameters
+본 모델의 학습 안정성과 성능 극대화를 위해 설정한 하이퍼파라미터 및 전처리 상세 내역입니다.
+
+Data Scaling (StandardScaler): 좌표 데이터와 질량 데이터 간의 수치적 단위 차이를 극복하고 경사 하강법의 수렴 속도를 높이기 위해 표준 정규화(Standardization)를 적용했습니다.
+
+Architecture:
+  LSTM Layer: 64 Units (시계열 궤적의 곡률 패턴을 기억하기 위한 충분한 용량 확보)
+  Dropout: 0.3 (데이터 노이즈에 대한 강건성(Robustness)을 확보하고 과적합을 방지하기 위한 강력한 제약)
+  Dense Layer: 32 Units (ReLU activation)
+
+Training Settings:
+  Optimizer: Adam (Learning Rate: 0.001)
+  Loss Function: Mean Squared Error (MSE)
+  Early Stopping: Validation Loss가 10 epoch 동안 개선되지 않을 경우 학습을 조기 종료하여 최적의 일반화 성능을 포착했습니다.
+
+6. Technical Discussion: Why AI?
+과소결정계(Underdetermined System)의 돌파: Short Arc 상황은 타원의 파라미터를 확정하기 위한 구속 조건이 부족한 전형적인 과소결정계 문제입니다.
+LSM은 이를 기하학적 가정(원 궤도 근사)으로 풀려 했으나 실패한 반면, LSTM은 비선형 회귀를 통해 물리적 패턴을 추출했습니다. 미분 없는 추론: 전통적 방식은 미분($dv/dt$) 과정에서 노이즈가 증폭되는 치명적 약점이 있으나, LSTM은 궤적의 기하학적 곡률 패턴을 통째로 학습함으로써 노이즈에 영향을 받지 않는 강건함을 보여주었습니다.
+
+7. 연구 결과
 학습 곡선: Train 및 Validation Loss가 안정적으로 수렴하여 과적합 없는 학습을 확인했습니다.
 예측 정확도: LSM은 실제 질량보다 3~4배 이상 튀는 오차를 보인 반면, LSTM은 y=x 정답선에 정확히 안착하는 성능을 보였습니다.
 <img width="928" height="472" alt="학습의 안정성 그래프" src="https://github.com/user-attachments/assets/d498d31b-2dfa-4631-8184-5c28c1d7923c" />
 <img width="1770" height="467" alt="최종 결과 그래프" src="https://github.com/user-attachments/assets/fd59ebca-3982-4c93-91e5-f2454beb0272" />
 
 
-5. 향후 발전 방향
+8. 향후 발전 방향
 PINN(Physics-Informed Neural Networks) 도입: 데이터가 극도로 부족한 상황에서도 물리 법칙(에너지 보존 등)을 스스로 준수하며 답을 내놓는 하이브리드 모델로의 확장을 제안합니다.
