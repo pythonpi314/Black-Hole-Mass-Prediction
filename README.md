@@ -35,6 +35,7 @@ Architecture:
   Dense Layer: 32 Units (ReLU activation)
 
 Training Settings:
+
   Optimizer: Adam (Learning Rate: 0.001)
   Loss Function: Mean Squared Error (MSE)
   Early Stopping: Validation Loss가 10 epoch 동안 개선되지 않을 경우 학습을 조기 종료하여 최적의 일반화 성능을 포착했습니다.
