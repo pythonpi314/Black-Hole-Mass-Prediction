@@ -35,7 +35,7 @@ Architecture:
   
   Dropout: 0.3 (데이터 노이즈에 대한 강건성(Robustness)을 확보하고 과적합을 방지하기 위한 강력한 제약)
   
-  Dense Layer: 32 Units (ReLU activation)
+  Dense Layer: 32 Units (ReLU activation) #단순 직선이 아닌 복잡한 곡선(Non-linear curve) 패턴을 학습하기 위해 사용됩니다.
 
 Training Settings:
 
