@@ -39,7 +39,7 @@ Architecture:
 
 Training Settings:
 
-  Optimizer: Adam (Learning Rate: 0.001)
+  Optimizer(최적화 도구): Adam (Learning Rate: 0.001)
   
   Loss Function: Mean Squared Error (MSE)
   
